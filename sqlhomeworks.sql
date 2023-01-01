@@ -19,6 +19,10 @@ SELECT last_name FROM customer WHERE first_name = 'Mary';
 --5-
 SELECT * FROM film WHERE length < 50 AND (rental_rate <> 2.99 AND rental_rate <> 4.99);
 
+
+
+
+
 --ODEV2--
 /*
 Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
@@ -37,6 +41,10 @@ SELECT first_name,last_name FROM actor WHERE first_name IN('Penelope','Nick','Ed
 --3-
 SELECT * FROM film WHERE rental_rate IN( 0.99, 2.99, 4.99) AND replacement_cost IN(12.99, 15.99, 28.99);
 
+
+
+
+
 --ODEV3--
 /*
 1-country tablosunda bulunan country sütunundaki ülke isimlerinden 'A' karakteri ile başlayıp 'a' karakteri ile sonlananları sıralayınız.
@@ -53,6 +61,10 @@ SELECT country FROM country WHERE country LIKE '_____%n';
 SELECT title FROM film WHERE title ILIKE '%t%t%t%t%';
 --4-
 SELECT * FROM film WHERE title LIKE 'C%' AND length > 90 AND rental_rate = 2.99;
+
+
+
+
 
 
 --ODEV4--
@@ -77,6 +89,9 @@ SELECT COUNT(country) FROM country WHERE country LIKE '_____'
 SELECT COUNT(*) FROM city WHERE  city ILIKE '%r'
 
 
+
+
+
 --ODEV5--
 /*
 Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
@@ -91,6 +106,10 @@ SELECT * FROM film WHERE title LIKE '%n' ORDER BY length ASC LIMIT 5;
 SELECT * FROM film WHERE title LIKE '%n' ORDER BY length OFFSET 5 LIMIT 5;
 --3--
 SELECT * FROM customer WHERE store_id = 1 ORDER BY last_name DESC LIMIT 4;
+
+
+
+
 
 
 --ODEV6--
@@ -112,6 +131,10 @@ SELECT MAX(length) FROM film WHERE rental_rate = 0.99;
 SELECT COUNT(DISTINCT replacement_cost) FROM film WHERE length > 150;
 
 
+
+
+
+
 --ODEV7--
 /*
 Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
@@ -131,6 +154,10 @@ SELECT replacement_cost,COUNT(*) FROM film GROUP BY replacement_cost HAVING COUN
 SELECT store_id,COUNT(customer_id) FROM customer GROUP BY store_id;
 --4-
 SELECT country_id,COUNT(country_id) FROM city GROUP BY country_id  ORDER BY COUNT(country_id) DESCLIMIT 1;
+
+
+
+
 
 
 --ODEV8--
@@ -205,6 +232,10 @@ UPDATE employee SET name = 'Dina' WHERE email = 'dleather1d@macromedia.com';
 DELETE FROM employee WHERE name = 'Dina';
 
 
+
+
+
+
 --ODEV9--
 /*
 Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
@@ -222,6 +253,10 @@ SELECT city,country FROM city INNER JOIN country ON country.country_id = city.ci
 SELECT payment_id,first_name,last_name FROM payment INNER JOIN customer ON payment.customer_id = customer.customer_id;
 --3-
 SELECT rental_id,first_name,last_name FROM rental INNER JOIN customer ON customer.customer_id = rental.customer_id;
+
+
+
+
 
 --ODEV10--
 /*
@@ -256,6 +291,10 @@ FULL JOIN customer
 ON rental.customer_id = customer.customer_id;
 
 
+
+
+
+
 --ODEV11--
 /*
 Aşağıdaki sorgu senaryolarını dvdrental örnek veri tabanı üzerinden gerçekleştiriniz.
@@ -279,6 +318,10 @@ SELECT first_name FROM actor EXCEPT SELECT first_name FROM customer;
   SELECT first_name FROM actor INTERSECT ALL SELECT first_name FROM customer;
   --4.3-
   SELECT first_name FROM actor EXCEPT ALL SELECT first_name FROM customer;
+
+
+
+
 
 
 --ODEV12--
